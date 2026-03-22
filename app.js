@@ -8,6 +8,6 @@ function order(item) {
     message += ` (${orderType})`;
   }
 
-  const smsLink = `sms:${phoneNumber}&body=${encodeURIComponent(message)}`;
+  const smsLink = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
   window.location.href = smsLink;
 }
