@@ -1,14 +1,13 @@
 function order(item) {
-  const phoneNumber = "16394709989"; // put your real number
-  const orderType = document.getElementById("orderType").value;
+  const phoneNumber = "16394709989"; // your real number
+  const orderType = document.getElementById("orderType")?.value || "";
 
-  let message = `Hi! I want to order: ${item} (${orderType})`;
+  let message = `Hi! I want to order: ${item}`;
 
-  if (orderType === "Delivery") {
-    message += " - My address is: ";
-  } else {
-    message += " - I will pick up.";
+  if (orderType) {
+    message += ` (${orderType})`;
   }
 
-  window.location.href = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
+  const smsLink = `sms:${phoneNumber}&body=${encodeURIComponent(message)}`;
+  window.location.href = smsLink;
 }
