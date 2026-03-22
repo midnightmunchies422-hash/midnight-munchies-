@@ -1,5 +1,5 @@
 function order(item) {
-  const phoneNumber = "16394709989"; // your real number
+  const phoneNumber = "16393995905"; // your real number
   const orderType = document.getElementById("orderType")?.value || "";
 
   let message = `Hi! I want to order: ${item}`;
